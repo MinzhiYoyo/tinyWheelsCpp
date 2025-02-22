@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# 文件夹排除
+/bin
+/lib
+/cmake-build-debug
+/cmake-build-release
+/build
+
