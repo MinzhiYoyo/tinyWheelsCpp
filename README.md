@@ -18,7 +18,14 @@ This is a project for learning, which implements many wheels and is useless exce
 - [标准模板库](https://github.com/gcc-mirror/gcc/tree/master/libstdc%2B%2B-v3/include/bits)
 - [TinySTL](https://github.com/zouxiaohang/TinySTL)
 
+# 开发文档
+
+开发过程中的文档在`doc`文件夹中，如果是`0-*.md`文件，表示基础知识，其他的才是实现文档
+
 # 项目结构及介绍
+
+项目的实现并没有严格的顺序，而是根据学习进度来的，但是有些细节部分还是会有顺序的，比如需要先实现内存池的功能，才能实现`STL`的其他组件。
+
 
 ```
 ├── CMakeLists.txt 	// cmake 构建文件
