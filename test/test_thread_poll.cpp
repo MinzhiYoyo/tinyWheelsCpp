@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "ThreadPoll/ThreadPoll.h"
+#include "ThreadPoll.h"
 #include <sys/select.h>
 
 std::mutex cout_mutex;

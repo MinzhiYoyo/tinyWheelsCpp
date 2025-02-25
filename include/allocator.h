@@ -8,9 +8,10 @@
 #include <cstddef>
 #include <utility>
 #include "exception.h"
+#include <ostream>
 
 namespace tinyWheels{
-        template <typename  T>
+    template <typename  T>
     class Allocator {
         union OBJ{
             OBJ* next;

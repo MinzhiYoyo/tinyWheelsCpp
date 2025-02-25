@@ -1,5 +1,5 @@
 #include "sqlConnectionPoll.h"
-#include "MySQL/MySQL.h"
+#include "MySQL.h"
 #include <iostream>
 #include <cstdlib>
 

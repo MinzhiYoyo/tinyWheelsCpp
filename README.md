@@ -29,13 +29,13 @@ This is a project for learning, which implements many wheels and is useless exce
 
 ```
 ├── CMakeLists.txt 	// cmake 构建文件
-├── include			// stl库的实现，头文件
+├── include			// 头文件。如果是 *.impl.h 文件，相当于 .cpp 文件，这是因为模板编程的特殊性，如果是 *.def.h 文件，相当于 .h 文件
 │   ├── *.h			// 所有头文件
 ├── LICENSE			// 开源许可证
 ├── doc			    // 实现项目的所有文档，注意是实现，不是使用文档
 ├── main.cpp		// 整体测试文件
 ├── README.md		// 
-├── wheels			// 库的实现，源文件，目前没有写在这里面。如果是 *.impl.h 文件，相当于 .cpp 文件，这是因为模板编程的特殊性，如果是 *.def.h 文件，相当于 .h 文件
+├── src  			// 库的实现，源文件，目前没有写在这里面。
 ├── test			// 单元测试文件
 │   ├── test_*.cpp	// 所有单元测试文件
 ├── bin

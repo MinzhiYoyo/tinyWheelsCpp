@@ -161,7 +161,12 @@ namespace tinyWheels {
     template<class T, class Alloc>
     vector<T, Alloc> &vector<T, Alloc>::move_from(vector &&vec) noexcept {
         if (this != &vec) {
-            *this = std::move(vec);
+            data_ = vec.data_;
+            capacity_ = vec.capacity_;
+            size_ = vec.size_;
+            vec.data_ = nullptr;
+            vec.capacity_ = 0;
+            vec.size_ = 0;
         }
         return *this;
     }

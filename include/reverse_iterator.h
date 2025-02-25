@@ -13,6 +13,7 @@ namespace tinyWheels{
     template<class Iterator>
     class ReverseIterator
     {
+    public:
         // 定义所有的类型
         using iterator_type = Iterator; //  迭代器类型，连续容器一般是T*
         using iterator_category = typename iterator_traits<iterator_type>::iterator_category;
@@ -22,7 +23,7 @@ namespace tinyWheels{
         using reference = typename iterator_traits<iterator_type>::reference;
         using const_point = const pointer;
         using const_reference = const reference;
-
+    private:
         Iterator cur_;  // 当前迭代器
     public:
         ReverseIterator() = default;

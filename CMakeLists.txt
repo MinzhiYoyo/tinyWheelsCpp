@@ -4,7 +4,7 @@ project(tinyWheelCpp)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(core_dir ${PROJECT_SOURCE_DIR}/wheels)
+set(core_dir ${PROJECT_SOURCE_DIR}/src)
 set(binary_dir ${PROJECT_SOURCE_DIR}/bin)
 set(test_dir ${PROJECT_SOURCE_DIR}/test)
 set(library_dir ${PROJECT_SOURCE_DIR}/lib)
@@ -30,7 +30,7 @@ add_custom_target(create_lib_dir ALL
         COMMAND ${CMAKE_COMMAND} -E make_directory ${library_dir}
 )
 
-# 单独编译每个静态库
+## 单独编译每个静态库
 foreach (core_file ${CORE_FILES})
     # 获取文件相对于项目根目录的路径
     file(RELATIVE_PATH rel_path ${PROJECT_SOURCE_DIR} ${core_file})
@@ -45,7 +45,7 @@ foreach (core_file ${CORE_FILES})
     set_target_properties(${basename} PROPERTIES
             ARCHIVE_OUTPUT_DIRECTORY "${library_dir}/${output_dir}"
     )
-    target_include_directories(${basename} PRIVATE ${core_dir})
+    target_include_directories(${basename} PRIVATE ${include_dir})
 endforeach ()
 
 # 获取所有的 .a 静态库
@@ -74,8 +74,8 @@ foreach (cpp_file ${CPP_FILES})
     set_target_properties(${basename} PROPERTIES
             RUNTIME_OUTPUT_DIRECTORY "${binary_dir}/${output_dir}"
     )
-    # 添加静态库
-    target_link_libraries(${basename} ${LIB_FILES})
+    # 添加静态库，不添加编译好的静态库，直接添加源文件即可，反正 .o 文件也会 cache 的
+#    target_link_libraries(${basename} ${LIB_FILES})
     target_include_directories(${basename} PRIVATE ${core_dir} ${include_dir})
     target_link_libraries(${basename} mysqlclient)
 

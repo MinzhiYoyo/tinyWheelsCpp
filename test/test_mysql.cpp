@@ -1,4 +1,4 @@
-#include "MySQL/MySQL.h"
+#include "MySQL.h"
 
 int main(){
 
