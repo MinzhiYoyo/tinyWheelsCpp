@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(tinyWheelCpp)
 # 设置C++标准
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(core_dir ${PROJECT_SOURCE_DIR}/src)

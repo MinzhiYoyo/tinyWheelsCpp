@@ -1,18 +1,19 @@
-# tiny wheels cpp
-This is a project for learning, which implements many wheels and is useless except for learning.
+# Tiny Wheels with CPP
 
-这个项目只是为了学习，实现了很多轮子，除了学习之外没有任何用处。
+# 项目背景
+
+刚好在找实习+学校的开源激励计划参加了但是一直没有什么好的idea或者进展，就打算用这个项目来一举两得吧。
 
 # 前言
 
-鉴于即将找实习的我还没有什么拿的出手的cpp项目，然后现在也来不及做其他项目了，所以决定复刻一个`STL(Standard Template Library)`和一些`tinyWebserver`等组件。
+所以决定复刻一个`STL(Standard Template Library)`和一些`tinyWebserver`等组件。
 
 本项目将采用`Modern cpp`来实现，coding时处理使用以下几个工具并 **未做其他测试**：
-- c++20
-- Linux gcc 编译器
-- cmake 编译工具
-- Linux 远程开发
-- Clion IDE
+- C++20
+- Linux gcc 编译器: gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+- cmake 编译工具: version 3.28.3
+- Linux: `Ubuntu 24.04.2 LTS` for WSL2
+- Clion IDE Remote Development
 
 重要参考项目：
 - [标准模板库](https://github.com/gcc-mirror/gcc/tree/master/libstdc%2B%2B-v3/include/bits)
@@ -46,5 +47,5 @@ This is a project for learning, which implements many wheels and is useless exce
 
 # 注意事项
 
-1. 由于本项目实现的`STL`并没有经过非常**严格**的测试，所以在实现其他组件的时候，还是会采用`std`的库，以保证程序的**正确性**。
-2. 本项目的目的在于学习，因此很多组件的功能是比较简单的，重点是为了**学习知识**，而**不是投入生产应用**。
+1. 由于本项目实现的`STL`并没有经过非常**严格**的测试，所以在实现其他组件的时候，可能还是会先会采用`std`的库，以保证程序的**正确性**。
+2. 本项目的目的不是为了取代任何一个市面上的库。
