@@ -28,9 +28,9 @@ namespace tinyWheels{
 
         constexpr static auto PTR_BYTES = sizeof(null_ptr_type);
         // 计算对齐大小，所有的块内存都应该是 ALIGN 的倍数，但是必须大于 8，因为需要存储指针
-        constexpr static memory_size_type ALIGN = alignof(T) > PTR_BYTES? alignof(T) : PTR_BYTES; // 64位系统下，指针大小为 8 字节
+        constexpr static memory_size_type ALIGN = sizeof(T) > PTR_BYTES? sizeof(T)+7&~7: PTR_BYTES; // 64位系统下，指针大小为 8 字节
         // 阈值，当需要分配的内存大于阈值时，从堆中获取内存块，同样也是需要看传入的类型是否太大了
-        constexpr static memory_size_type THRESHOLD = 16 * PTR_BYTES < alignof(T) ? alignof(T) : 16 * PTR_BYTES;
+        constexpr static memory_size_type THRESHOLD = 16 * PTR_BYTES < sizeof(T) ? sizeof(T) : 16 * PTR_BYTES;
         constexpr static block_number BLOCK_NUMBER = 20;  // 每次从堆中获取的内存块数量
 
 
